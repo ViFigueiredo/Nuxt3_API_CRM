@@ -23,7 +23,7 @@ const isDark = computed({
     <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <NuxtLink to="/">
-          <span class="font-semibold text-xl tracking-tight">Pablo Codes</span>
+          <span class="font-semibold text-xl tracking-tight">FigCodes</span>
         </NuxtLink>
       </div>
       <div class="block lg:hidden">
@@ -38,12 +38,12 @@ const isDark = computed({
           >
             <title>Menu</title>
             <path
-              :class="{ 'hidden': isOpen, 'inline-block': !isOpen }"
+              :class="{ hidden: isOpen, 'inline-block': !isOpen }"
               class="fill-current"
               d="M0 0h20v20H0z"
             />
             <path
-              :class="{ 'hidden': !isOpen, 'inline-block': isOpen }"
+              :class="{ hidden: !isOpen, 'inline-block': isOpen }"
               class="fill-current"
               d="M0 0h20v20H0z"
             />
@@ -66,9 +66,10 @@ const isDark = computed({
         <div>
           <ClientOnly>
             <UButton
-              :icon="isDark
-                ? 'i-heroicons-moon-20-solid'
-                : 'i-heroicons-sun-20-solid'
+              :icon="
+                isDark
+                  ? 'i-heroicons-moon-20-solid'
+                  : 'i-heroicons-sun-20-solid'
               "
               color="gray"
               variant="ghost"
@@ -81,16 +82,9 @@ const isDark = computed({
             </template>
           </ClientOnly>
 
-          <select
-            v-model="locale"
-            class="ml-8"
-          >
-            <option value="pt">
-              pt
-            </option>
-            <option value="en">
-              en
-            </option>
+          <select v-model="locale" class="ml-8">
+            <option value="pt">pt</option>
+            <option value="en">en</option>
           </select>
         </div>
       </div>

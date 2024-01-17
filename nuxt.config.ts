@@ -15,7 +15,6 @@ export default defineNuxtConfig({
   },
   css: ['@/assets/css/main.css', '@/assets/css/tailwind.css'],
   modules: [
-    'nuxt-openapi-docs-module',
     '@nuxt/ui',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
@@ -23,17 +22,6 @@ export default defineNuxtConfig({
       '@nuxtjs/i18n',
       {
         vueI18n: './i18n',
-      },
-    ],
-    [
-      'nuxt-openapi-docs-module',
-      {
-        folder: './docs/openapi',
-        name: 'OpenApiDocs',
-        files: function () {
-          return { 'News-API': 'News API' };
-        },
-        locales: ['pt'],
       },
     ],
   ],
